@@ -1,0 +1,12 @@
+
+
+<h1>タスク新規登録</h1>
+
+<%= form_for(@task) do |f| %>
+
+   <%= f.label :content, "コンテント" %>
+   <%= f.text_field :content %>
+   
+   <%= f.submit "登録" %>
+
+<% end %>
