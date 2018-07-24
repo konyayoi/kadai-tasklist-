@@ -4,12 +4,18 @@ class TasksController < ApplicationController
     @tasks = Task.all.order("created_at DESC")
   end
   
+  
   def new
     @task = Task.new
   end
   
+  
+  def show
+    @task = Task.find(params[:id])
+  end
+  
+  
   def create
-    
     @task = Task.new(task_params)
     if (@task.save)
       flash[:success] = "Taskが正常に投稿されました"
@@ -22,7 +28,7 @@ class TasksController < ApplicationController
   
   
   def edit
-    @message = Message.find(params[:id])
+    @task = Task.find(params[:id])
   end
   
   
